@@ -1,0 +1,54 @@
+<head>
+    <script>
+       function Student(name){
+        this.name=name;
+        this.sub=new Array(Math.floor(Math.random()*10)+91,Math.floor(Math.random()*10)+91,Math.floor(Math.random()*10)+91);
+         }
+        
+        var student1=new Student("Bhanu");
+        var student2=new Student("Lingaih");
+        var student3=new Student("Manoj");
+        var student4=new Student("Sujith");
+        var student5=new Student("Suraj");
+        var Student = new Array(student1,student2,student3,student4,student5);
+        var sum=0;
+        var avg=0;
+        var savg=new Array(3);
+        var stot=new Array(3);
+       var stud=new Array(3);
+        for(var i=0;i<Student.length;i++){
+            for(var j=0,sum=0;j<3;j++){
+               sum+=Student[i].sub[j];
+                stud[i]=Student[i].name;
+             }   
+               avg=sum/3; 
+               savg.push(avg);
+               stot.push(sum);
+          
+       } 
+         savg.sort((a,b)=>a-b);
+         stot.sort((a,b)=>a-b);
+         
+             document.write("sorting of average marks");
+       document.write("<br>"+"<br>");
+       for(var i=0;i<Student.length;i++)
+         document.write(Student[i].name+"-"+savg[i]+"<br>"+"<br>");
+
+       document.write("sorting of total marks");
+       document.write("<br>"+"<br>");
+       for(var i=0;i<Student.length;i++)
+         document.write(Student[i].name+"-"+stot[i]+"<br>"+"<br>");
+         
+   document.write("sorting of names");
+       document.write("<br>"+"<br>");
+           
+      for(var i=0;i<Student.length;i++) 
+			document.write(stud[i]+"<br>"+"<br>");
+             Student.sort(function(a,b){if(a.name>b.name) return 1;
+			else if(a.name<b.name)return -1;
+			else return 0;
+				});  
+    </script>
+  </head>
+  </html>                   
+ 
